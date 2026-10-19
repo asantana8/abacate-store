@@ -1,0 +1,73 @@
+<main class="container pagina-detalhe">
+  <a mat-button routerLink="/produtos">
+    <mat-icon>arrow_back</mat-icon>
+    Voltar aos produtos
+  </a>
+
+  @if (produto(); as item) {
+    <article class="row g-4 g-lg-5 detalhe">
+      <div class="col-12 col-md-6">
+        <img class="imagem-detalhe" [src]="item.imagemUrl" [alt]="item.nome">
+      </div>
+      <div class="col-12 col-md-6 conteudo-detalhe">
+        <mat-chip-set aria-label="Categoria">
+          <mat-chip>{{ item.categoria }}</mat-chip>
+        </mat-chip-set>
+        <h1>{{ item.nome }}</h1>
+        <p class="subtitulo">{{ item.subtitulo }}</p>
+        <p>{{ item.descricao }}</p>
+        <p class="preco">
+          {{ item.preco | currency: 'BRL' : 'symbol' : '1.2-2' : 'pt-BR' }}
+          <span>/ {{ item.unidadeMedida }}</span>
+        </p>
+
+        <section class="ficha" aria-labelledby="titulo-ficha">
+          <h2 id="titulo-ficha">Ficha técnica</h2>
+          <dl>
+            <div><dt>Safra</dt><dd>{{ item.fichaTecnica.safra }}</dd></div>
+            <div><dt>Tamanho</dt><dd>{{ item.fichaTecnica.tamanho }}</dd></div>
+            <div><dt>Textura da casca</dt><dd>{{ item.fichaTecnica.texturaCasca }}</dd></div>
+            <div><dt>Cor da casca</dt><dd>{{ item.fichaTecnica.corCasca }}</dd></div>
+            <div><dt>Teor de água</dt><dd>{{ item.fichaTecnica.teorAgua }}</dd></div>
+            <div><dt>Teor de azeite</dt><dd>{{ item.fichaTecnica.teorOleo }}</dd></div>
+          </dl>
+        </section>
+
+        @if (item.emEstoque) {
+          <div class="controles d-flex align-items-center gap-2">
+            <button
+              mat-icon-button
+              type="button"
+              aria-label="Diminuir quantidade"
+              [disabled]="quantidade() <= 0"
+              (click)="alterarQuantidade(-0.25)"
+            >
+              <mat-icon>remove</mat-icon>
+            </button>
+            <mat-form-field appearance="outline" class="campo-quantidade">
+              <mat-label>Quantidade</mat-label>
+              <input matInput type="number" min="0.25" step="0.25" [value]="quantidade()" (input)="definirQuantidade($event)">
+            </mat-form-field>
+            <button mat-icon-button type="button" aria-label="Aumentar quantidade" (click)="alterarQuantidade(0.25)">
+              <mat-icon>add</mat-icon>
+            </button>
+            <button mat-flat-button type="button" [disabled]="quantidade() <= 0" (click)="adicionarAoCarrinho()">
+              Adicionar ao carrinho
+            </button>
+          </div>
+        } @else {
+          <p class="indisponivel">Produto temporariamente indisponível.</p>
+        }
+      </div>
+    </article>
+  } @else if (catalogo.erro()) {
+    <p role="alert">{{ catalogo.erro() }}</p>
+  } @else if (catalogo.produtos().length) {
+    <section class="estado-vazio">
+      <h1>Produto não encontrado</h1>
+      <a mat-flat-button routerLink="/produtos">Voltar ao catálogo</a>
+    </section>
+  } @else {
+    <p>Carregando produto...</p>
+  }
+</main>

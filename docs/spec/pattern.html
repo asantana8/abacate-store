@@ -1,0 +1,31 @@
+<!-- O Bootstrap gerencia o container, a linha e as colunas responsivas -->
+<div class="container my-4">
+  <div class="row g-4">
+    
+    <!-- Coluna Bootstrap -->
+    <div class="col-12 col-md-6 col-lg-4">
+      <!-- O Angular Material gerencia o componente visual e interativo -->
+      <mat-card class="h-100 shadow-sm">
+        <img mat-card-image src="https://abacatesdobrasil.org.br/wp-content/uploads/2020/05/HASS.jpg" alt="Avocado Hass" style="height: 200px; object-fit: cover;">
+        
+        <mat-card-header class="px-3 pt-3">
+          <mat-card-title>Avocado (Hass)</mat-card-title>
+          <mat-card-subtitle>O queridinho dos chefs</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content class="p-3">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <mat-chip-option color="accent" selected>Gourmet</mat-chip-option>
+            <span class="fw-bold text-success fs-5">R$ 12,90 / kg</span>
+          </div>
+        </mat-card-content>
+
+        <mat-card-actions class="p-3 d-flex gap-2">
+          <button mat-stroked-button class="w-50">Detalhes</button>
+          <button mat-flat-button color="primary" class="w-50">Adicionar</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+  </div>
+</div>

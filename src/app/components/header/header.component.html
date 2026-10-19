@@ -1,0 +1,27 @@
+<mat-toolbar color="primary" class="barra-cabecalho">
+  <a class="marca" routerLink="/" aria-label="Abacate Store, página inicial">
+    <mat-icon aria-hidden="true">eco</mat-icon>
+    <span>Abacate Store</span>
+  </a>
+
+  <span class="espacador"></span>
+
+  <nav class="navegacao" aria-label="Navegação principal">
+    <a mat-button routerLink="/" routerLinkActive="rota-ativa" [routerLinkActiveOptions]="{ exact: true }">
+      Início
+    </a>
+    <a mat-button routerLink="/produtos" routerLinkActive="rota-ativa">Produtos</a>
+  </nav>
+
+  <a
+    mat-icon-button
+    class="botao-carrinho"
+    routerLink="/carrinho"
+    matTooltip="Abrir carrinho"
+    [matBadge]="carrinhoService.quantidadeTotalItens()"
+    [matBadgeHidden]="carrinhoService.quantidadeTotalItens() === 0"
+    [attr.aria-label]="'Abrir carrinho. Itens: ' + carrinhoService.quantidadeTotalItens()"
+  >
+    <mat-icon aria-hidden="true">shopping_cart</mat-icon>
+  </a>
+</mat-toolbar>

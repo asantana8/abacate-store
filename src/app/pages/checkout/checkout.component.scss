@@ -1,0 +1,102 @@
+.pagina-checkout {
+  padding-block: 2rem 4rem;
+}
+
+.cabecalho-pagina {
+  margin-bottom: 1.5rem;
+}
+
+.sobrelinha {
+  margin: 0 0 0.5rem;
+  color: var(--color-primary-light);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: 2.25rem;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: 1.375rem;
+}
+
+.campos-formulario {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.25rem 1rem;
+}
+
+.campo-largo {
+  grid-column: 1 / -1;
+}
+
+.pagamento {
+  margin: 0;
+  padding: 1rem 0 0;
+  border: 0;
+}
+
+.pagamento legend {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.resumo-pedido {
+  border-radius: 4px;
+}
+
+.resumo-pedido mat-card-content {
+  padding-top: 1rem;
+}
+
+.linha-resumo,
+.linha-total {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0;
+  padding-block: 0.5rem;
+  border-bottom: 1px solid rgb(28 40 51 / 12%);
+}
+
+.linha-total {
+  margin-top: 0.5rem;
+  border-bottom: 0;
+  font-size: 1.125rem;
+}
+
+.linha-total strong {
+  color: var(--color-primary);
+}
+
+.resumo-pedido mat-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0 1rem 1rem;
+}
+
+.carrinho-vazio {
+  padding-block: 3rem;
+  text-align: center;
+}
+
+@media (max-width: 575.98px) {
+  .pagina-checkout {
+    padding-top: 1rem;
+  }
+
+  .campos-formulario {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .campo-largo {
+    grid-column: auto;
+  }
+}

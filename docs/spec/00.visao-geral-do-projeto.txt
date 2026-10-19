@@ -1,0 +1,6 @@
+meu-projeto-abacates/
+└── docs/
+    └── specs/
+        ├── 01-data-contracts.md
+        ├── 02-architecture-state.md
+        └── 03-ui-components-ux.md

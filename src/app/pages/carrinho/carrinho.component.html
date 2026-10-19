@@ -1,0 +1,55 @@
+<main class="container pagina-carrinho">
+  <header class="cabecalho-pagina">
+    <p class="sobrelinha">Sua seleção</p>
+    <h1>Meu carrinho</h1>
+  </header>
+
+  @if (carrinho.itens().length) {
+    <div class="row g-4">
+      <section class="col-12 col-lg-8" aria-label="Itens do carrinho">
+        @for (item of carrinho.itens(); track item.produto.id) {
+          <article class="item-carrinho d-flex align-items-center gap-3">
+            <img [src]="item.produto.imagemUrl" [alt]="item.produto.nome">
+            <div class="descricao-item">
+              <h2>{{ item.produto.nome }}</h2>
+              <p>{{ item.produto.preco | currency: 'BRL' : 'symbol' : '1.2-2' : 'pt-BR' }} / {{ item.produto.unidadeMedida }}</p>
+            </div>
+            <mat-form-field appearance="outline" class="campo-quantidade">
+              <mat-label>Quantidade</mat-label>
+              <input matInput type="number" min="0" step="0.25" [value]="item.quantidade" (change)="atualizarQuantidade(item.produto.id, $event)">
+            </mat-form-field>
+            <p class="total-item">
+              {{ item.produto.preco * item.quantidade | currency: 'BRL' : 'symbol' : '1.2-2' : 'pt-BR' }}
+            </p>
+            <button
+              mat-icon-button
+              type="button"
+              matTooltip="Remover produto"
+              [attr.aria-label]="'Remover ' + item.produto.nome"
+              (click)="carrinho.removerDoCarrinho(item.produto.id)"
+            >
+              <mat-icon>delete_outline</mat-icon>
+            </button>
+          </article>
+        }
+      </section>
+
+      <aside class="col-12 col-lg-4 resumo">
+        <h2>Resumo</h2>
+        <p class="d-flex justify-content-between gap-2">
+          <span>Subtotal</span>
+          <strong>{{ carrinho.subtotal() | currency: 'BRL' : 'symbol' : '1.2-2' : 'pt-BR' }}</strong>
+        </p>
+        <a mat-flat-button routerLink="/checkout">Continuar para checkout</a>
+        <a mat-button routerLink="/produtos">Continuar comprando</a>
+      </aside>
+    </div>
+  } @else {
+    <section class="carrinho-vazio">
+      <mat-icon aria-hidden="true">shopping_basket</mat-icon>
+      <h2>Seu carrinho está vazio</h2>
+      <p>Explore o catálogo e escolha suas variedades favoritas.</p>
+      <a mat-flat-button routerLink="/produtos">Ver produtos</a>
+    </section>
+  }
+</main>

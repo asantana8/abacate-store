@@ -1,0 +1,45 @@
+@use '@angular/material' as mat;
+
+@use 'bootstrap/scss/bootstrap-grid';
+
+@include mat.core();
+@include mat.theme(
+	(
+		color: (
+			theme-type: light,
+			primary: mat.$green-palette,
+		),
+		typography: Roboto,
+		density: 0,
+	)
+);
+
+:root {
+	--color-primary: #2d5a27;
+	--color-primary-light: #4e8b44;
+	--color-accent: #f4d03f;
+	--color-success: #8daa3f;
+	--color-bg-light: #f8f9fa;
+	--color-text-main: #1c2833;
+}
+
+@include mat.theme-overrides(
+	(
+		primary: var(--color-primary),
+		on-primary: #ffffff,
+	)
+);
+
+.container,
+.container-fluid {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+	font-family: Roboto, 'Helvetica Neue', sans-serif;
+	background-color: var(--color-bg-light);
+	color: var(--color-text-main);
+}

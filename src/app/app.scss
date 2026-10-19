@@ -1,0 +1,29 @@
+:host {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+.conteudo-principal {
+	flex: 1 0 auto;
+}
+
+.rodape-site {
+	padding-block: 1rem;
+	background-color: var(--color-primary);
+	color: #ffffff;
+}
+
+.rodape-site p {
+	margin: 0;
+}
+
+.rodape-site a {
+	color: #ffffff;
+	font-weight: 700;
+}
+
+.rodape-site a:focus-visible {
+	outline: 2px solid var(--color-accent);
+	outline-offset: 3px;
+}

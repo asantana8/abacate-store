@@ -1,0 +1,42 @@
+<main class="container pagina-inicial">
+  <section class="abertura row align-items-center g-4" aria-labelledby="titulo-inicial">
+    <div class="col-12 col-lg-6 abertura-texto">
+      <p class="sobrelinha">Da safra brasileira para sua mesa</p>
+      <h1 id="titulo-inicial">Abacates para cada jeito de comer bem.</h1>
+      <p class="introducao">
+        Explore variedades nacionais, conheça suas características e escolha a que combina com a sua receita.
+      </p>
+      <a mat-flat-button routerLink="/produtos">Explorar produtos</a>
+    </div>
+    @if (produtoHero(); as destaque) {
+      <div class="col-12 col-lg-6 abertura-imagem">
+        <img [src]="destaque.imagemUrl" [alt]="destaque.nome">
+        <span>{{ destaque.nome }}</span>
+      </div>
+    }
+  </section>
+
+  <section class="secao-destaques" aria-labelledby="titulo-destaques">
+    <div class="cabecalho-secao d-flex justify-content-between align-items-end gap-3">
+      <div>
+        <p class="sobrelinha">Escolhas da estação</p>
+        <h2 id="titulo-destaques">Em destaque</h2>
+      </div>
+      <a mat-button routerLink="/produtos">Ver catálogo</a>
+    </div>
+
+    @if (catalogo.erro()) {
+      <p role="alert">{{ catalogo.erro() }}</p>
+    } @else if (destaques().length) {
+      <div class="row g-3 g-lg-4">
+        @for (produto of destaques(); track produto.id) {
+          <div class="col-12 col-sm-6 col-lg-4">
+            <app-card-produto [produto]="produto" />
+          </div>
+        }
+      </div>
+    } @else {
+      <p>Carregando variedades da safra...</p>
+    }
+  </section>
+</main>

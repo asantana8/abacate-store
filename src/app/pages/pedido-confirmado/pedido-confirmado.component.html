@@ -1,0 +1,38 @@
+<main class="container pagina-confirmacao">
+  <mat-card class="confirmacao text-center">
+    <mat-card-content>
+      <mat-icon class="icone-sucesso" aria-hidden="true">check_circle</mat-icon>
+      <p class="sobrelinha">Obrigado pela sua compra demonstrativa</p>
+      <h1>PEDIDO GERADO COM SUCESSO!</h1>
+      <p class="codigo-pedido">Código do pedido: <strong>{{ pedido()?.id ?? idPedido() }}</strong></p>
+
+      @if (pedido(); as pedidoGerado) {
+        <p>Gerado em {{ pedidoGerado.dataCriacao | date: 'dd/MM/yyyy HH:mm' : undefined : 'pt-BR' }}</p>
+
+        <section class="resumo-confirmacao" aria-label="Resumo do pedido">
+          <h2>Itens</h2>
+          @for (item of pedidoGerado.itens; track item.produto.id) {
+            <p class="linha-resumo">
+              <span>{{ item.quantidade }} × {{ item.produto.nome }}</span>
+              <strong>{{ item.produto.preco * item.quantidade | currency: 'BRL' : 'symbol' : '1.2-2' : 'pt-BR' }}</strong>
+            </p>
+          }
+          <p class="linha-resumo"><span>Subtotal</span><strong>{{ pedidoGerado.subtotal | currency: 'BRL' : 'symbol' : '1.2-2' : 'pt-BR' }}</strong></p>
+          <p class="linha-resumo"><span>Frete</span><strong>{{ pedidoGerado.frete | currency: 'BRL' : 'symbol' : '1.2-2' : 'pt-BR' }}</strong></p>
+          <p class="linha-total"><span>Total</span><strong>{{ pedidoGerado.total | currency: 'BRL' : 'symbol' : '1.2-2' : 'pt-BR' }}</strong></p>
+          <h2>Entrega</h2>
+          <p>{{ pedidoGerado.cliente.nomeCompleto }} · {{ pedidoGerado.cliente.email }}</p>
+          <p>{{ pedidoGerado.cliente.enderecoEntrega }}, {{ pedidoGerado.cliente.cidade }} - {{ pedidoGerado.cliente.estado }}</p>
+        </section>
+      } @else {
+        <p>Os detalhes deste pedido não estão disponíveis nesta sessão.</p>
+      }
+
+      <p class="aviso-institucional">
+        Esta é uma demonstração de e-commerce fictício baseada nas variedades do site Abacates do Brasil.
+        Nenhum valor monetário real foi cobrado e nenhum produto será enviado.
+      </p>
+      <a mat-flat-button routerLink="/produtos">Voltar à loja</a>
+    </mat-card-content>
+  </mat-card>
+</main>

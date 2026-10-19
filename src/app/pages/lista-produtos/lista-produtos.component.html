@@ -1,0 +1,46 @@
+<main class="container pagina-catalogo">
+  <header class="cabecalho-catalogo">
+    <p class="sobrelinha">Nossa seleção</p>
+    <h1>Variedades de abacate</h1>
+    <p>Encontre uma variedade pelo nome, sabor ou característica.</p>
+  </header>
+
+  <section class="filtros" aria-label="Filtros do catálogo">
+    <mat-form-field appearance="outline" class="campo-busca">
+      <mat-label>Buscar produtos</mat-label>
+      <input matInput type="search" [value]="catalogo.termoBusca()" (input)="atualizarBusca($event)">
+    </mat-form-field>
+
+    <mat-button-toggle-group
+      aria-label="Filtrar por categoria"
+      [value]="catalogo.categoriaSelecionada()"
+      (change)="selecionarCategoria($event.value)"
+    >
+      <mat-button-toggle [value]="null">Todas</mat-button-toggle>
+      @for (categoria of catalogo.categorias(); track categoria.id) {
+        <mat-button-toggle [value]="categoria.id">{{ categoria.nome }}</mat-button-toggle>
+      }
+    </mat-button-toggle-group>
+  </section>
+
+  @if (catalogo.erro()) {
+    <p role="alert">{{ catalogo.erro() }}</p>
+  } @else if (catalogo.produtosFiltrados().length) {
+    <p class="contagem">{{ catalogo.produtosFiltrados().length }} produtos</p>
+    <div class="row g-3 g-lg-4">
+      @for (produto of catalogo.produtosFiltrados(); track produto.id) {
+        <div class="col-12 col-sm-6 col-lg-4">
+          <app-card-produto [produto]="produto" />
+        </div>
+      }
+    </div>
+  } @else if (catalogo.produtos().length) {
+    <section class="sem-resultados" aria-live="polite">
+      <h2>Nenhum produto encontrado</h2>
+      <p>Altere a busca ou escolha outra categoria.</p>
+      <button mat-stroked-button type="button" (click)="limparFiltros()">Limpar filtros</button>
+    </section>
+  } @else {
+    <p>Carregando catálogo...</p>
+  }
+</main>

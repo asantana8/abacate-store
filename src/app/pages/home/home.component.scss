@@ -1,0 +1,94 @@
+.pagina-inicial {
+  padding-block: 2rem 4rem;
+}
+
+.abertura {
+  min-height: 370px;
+  padding-block: 1rem 3rem;
+}
+
+.abertura-texto {
+  max-width: 38rem;
+}
+
+.sobrelinha {
+  margin: 0 0 0.75rem;
+  color: var(--color-primary-light);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h1 {
+  max-width: 12ch;
+  margin: 0;
+  color: var(--color-primary);
+  font-size: 3rem;
+  line-height: 1.08;
+}
+
+.introducao {
+  max-width: 34rem;
+  margin: 1.25rem 0 1.5rem;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.abertura-imagem {
+  position: relative;
+  min-height: 300px;
+}
+
+.abertura-imagem img {
+  width: 100%;
+  height: 330px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.abertura-imagem span {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.25rem;
+  padding: 0.4rem 0.65rem;
+  background: #ffffff;
+  color: var(--color-text-main);
+  font-weight: 700;
+}
+
+.secao-destaques {
+  padding-top: 1.5rem;
+  border-top: 1px solid rgb(28 40 51 / 15%);
+}
+
+.cabecalho-secao {
+  margin-bottom: 1.25rem;
+}
+
+.cabecalho-secao .sobrelinha {
+  margin-bottom: 0.25rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+@media (max-width: 575.98px) {
+  .pagina-inicial {
+    padding-top: 1rem;
+  }
+
+  .abertura {
+    min-height: unset;
+    padding-bottom: 2rem;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  .abertura-imagem img {
+    height: 250px;
+  }
+}

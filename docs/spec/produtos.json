@@ -1,0 +1,149 @@
+{
+  "categorias": [
+    { "id": "gourmet", "nome": "Gourmet & Alta Culinária" },
+    { "id": "tradicional", "nome": "Tradicional & Familiar" },
+    { "id": "refrescante", "nome": "Refrescante & Verão" }
+  ],
+  "produtos": [
+    {
+      "id": "avocado-hass",
+      "nome": "Avocado (Hass)",
+      "subtitulo": "O queridinho dos chefs de cozinha",
+      "categoria": "gourmet",
+      "preco": 12.90,
+      "unidadeMedida": "kg",
+      "descricao": "Menor da família com polpa super concentrada em vitaminas, antioxidantes e óleos essenciais. Possui menos água e textura firme, perfeita para guacamole e pratos in natura.",
+      "fichaTecnica": {
+        "safra": "Fevereiro a Setembro",
+        "tamanho": "Pequeno (200g a 400g)",
+        "texturaCasca": "Rugosa",
+        "corCasca": "Negra / Verde bem escuro",
+        "teorAgua": "Baixo (~61%)",
+        "teorOleo": "Alto (20% - 25%)"
+      },
+      "imagemUrl": "assets/imagens/avocado-hass.jpg",
+      "emDestaque": true,
+      "emEstoque": true
+    },
+    {
+      "id": "breda",
+      "nome": "Abacate Breda",
+      "subtitulo": "Equilíbrio perfeito para doces e salgados",
+      "categoria": "tradicional",
+      "preco": 8.50,
+      "unidadeMedida": "kg",
+      "descricao": "Formato de gota com casca verde vibrante e sabor ligeiramente adocicado. Guarda ótimo equilíbrio entre água e gorduras boas.",
+      "fichaTecnica": {
+        "safra": "Julho a Setembro",
+        "tamanho": "Pequeno a Médio (400g a 600g)",
+        "texturaCasca": "Ligeiramente Rugosa",
+        "corCasca": "Verde",
+        "teorAgua": "Médio a Alto (64% - 77%)",
+        "teorOleo": "Médio (~12% - 15%)"
+      },
+      "imagemUrl": "assets/imagens/breda.jpg",
+      "emDestaque": false,
+      "emEstoque": true
+    },
+    {
+      "id": "fortuna",
+      "nome": "Abacate Fortuna",
+      "subtitulo": "Alimenta a família inteira",
+      "categoria": "tradicional",
+      "preco": 7.90,
+      "unidadeMedida": "kg",
+      "descricao": "Um dos gigantes da turma! Silhueta no formato de vírgula com polpa versátil. Nem tão doce, nem tão salgada, perfeita com açúcar e gotas de limão.",
+      "fichaTecnica": {
+        "safra": "Fevereiro a Julho",
+        "tamanho": "Grande (600g a 1000g)",
+        "texturaCasca": "Média",
+        "corCasca": "Verde Escura",
+        "teorAgua": "Alto (~81%)",
+        "teorOleo": "Baixo (~4% - 10%)"
+      },
+      "imagemUrl": "assets/imagens/fortuna.jpg",
+      "emDestaque": true,
+      "emEstoque": true
+    },
+    {
+      "id": "geada",
+      "nome": "Abacate Geada",
+      "subtitulo": "O abacate leve e refrescante do verão",
+      "categoria": "refrescante",
+      "preco": 6.90,
+      "unidadeMedida": "kg",
+      "descricao": "Polpa amarela e volumosa ideal para consumo bem gelado nos dias quentes. Apresenta teor reduzido de gordura e bastante água.",
+      "fichaTecnica": {
+        "safra": "Dezembro a Fevereiro",
+        "tamanho": "Médio (400g a 600g)",
+        "texturaCasca": "Lisa",
+        "corCasca": "Verde-Clara",
+        "teorAgua": "Muito Alto",
+        "teorOleo": "Baixo (~3.5%)"
+      },
+      "imagemUrl": "assets/imagens/geada.jpg",
+      "emDestaque": false,
+      "emEstoque": false
+    },
+    {
+      "id": "margarida",
+      "nome": "Abacate Margarida",
+      "subtitulo": "Redondinho e perfeito para sucos e vitaminas",
+      "categoria": "refrescante",
+      "preco": 8.20,
+      "unidadeMedida": "kg",
+      "descricao": "Fruta de corpo bem arredondado e casca rugosa. A polpa amarelada com caroço pequeno rende de forma espetacular em vitaminas.",
+      "fichaTecnica": {
+        "safra": "Maio a Dezembro",
+        "tamanho": "Médio a Grande (600g a 800g)",
+        "texturaCasca": "Rugosa",
+        "corCasca": "Verde",
+        "teorAgua": "Alto (~80%)",
+        "teorOleo": "Baixo (~6% - 11%)"
+      },
+      "imagemUrl": "assets/imagens/margarida.jpg",
+      "emDestaque": true,
+      "emEstoque": true
+    },
+    {
+      "id": "ouro-verde",
+      "nome": "Abacate Ouro Verde",
+      "subtitulo": "Especialista em sobremesas de inverno",
+      "categoria": "gourmet",
+      "preco": 10.50,
+      "unidadeMedida": "kg",
+      "descricao": "Safra exclusiva e curta de inverno. Casca verde escura protegendo uma polpa extremamente lisa e sem fibras, equilibrando firmeza e maciez.",
+      "fichaTecnica": {
+        "safra": "Julho a Agosto",
+        "tamanho": "Médio (400g a 600g)",
+        "texturaCasca": "Média",
+        "corCasca": "Verde Escura",
+        "teorAgua": "Alto (~79%)",
+        "teorOleo": "Médio (~8% - 12%)"
+      },
+      "imagemUrl": "assets/imagens/ouro-verde.jpg",
+      "emDestaque": false,
+      "emEstoque": true
+    },
+    {
+      "id": "quintal",
+      "nome": "Abacate Quintal",
+      "subtitulo": "Cremoso como manteiga",
+      "categoria": "tradicional",
+      "preco": 9.20,
+      "unidadeMedida": "kg",
+      "descricao": "Famoso pela silhueta com pescoço e casca fina que reluz. Polpa extremamente cremosa com textura amanteigada e altíssimo rendimento.",
+      "fichaTecnica": {
+        "safra": "Março a Julho",
+        "tamanho": "Grande (500g a 1000g)",
+        "texturaCasca": "Lisa",
+        "corCasca": "Verde-Clara",
+        "teorAgua": "Médio (~73%)",
+        "teorOleo": "Médio (~10% - 12%)"
+      },
+      "imagemUrl": "assets/imagens/quintal.jpg",
+      "emDestaque": true,
+      "emEstoque": true
+    }
+  ]
+}
